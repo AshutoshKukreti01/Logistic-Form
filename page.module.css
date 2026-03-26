@@ -1,0 +1,142 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-base);
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(13, 15, 18, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.headerInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoMark {
+  font-size: 20px;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.headerTag {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main {
+  flex: 1;
+  padding: 32px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.formPanel {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 112px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-default) transparent;
+}
+
+.formPanel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.formPanel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.formPanel::-webkit-scrollbar-thumb {
+  background-color: var(--border-default);
+  border-radius: 4px;
+}
+
+.previewPanel {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 112px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-default) transparent;
+}
+
+.previewPanel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.previewPanel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.previewPanel::-webkit-scrollbar-thumb {
+  background-color: var(--border-default);
+  border-radius: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formPanel,
+  .previewPanel {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .main {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerInner {
+    padding: 0 16px;
+  }
+
+  .headerTag {
+    display: none;
+  }
+}

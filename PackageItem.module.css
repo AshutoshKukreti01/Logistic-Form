@@ -1,0 +1,212 @@
+.card {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+  animation: pkgIn 0.3s ease both;
+}
+
+@keyframes pkgIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  border-color: var(--border-default);
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+  gap: 8px;
+}
+
+.header:focus-visible {
+  outline: 2px solid var(--border-accent);
+  outline-offset: -2px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pkgIndex {
+  background-color: var(--accent-blue-dim);
+  color: var(--accent-blue);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  padding: 2px 7px;
+  flex-shrink: 0;
+}
+
+.pkgName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pkgWeight {
+  font-size: 11px;
+  color: var(--text-muted);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+.removeBtn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+  padding: 4px 6px;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.removeBtn:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  background-color: var(--accent-red-dim);
+}
+
+.chevron {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: transform var(--transition-base);
+  display: inline-block;
+  line-height: 1;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+/* ===== BODY ===== */
+.body {
+  padding: 0 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 9px 10px;
+  outline: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--border-accent);
+  background-color: var(--bg-input-focus);
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ===== GRID ROWS ===== */
+.row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ===== VOLUMETRIC ===== */
+.volumetric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--accent-purple-dim);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.volumetricLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.volumetricValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+
+@media (max-width: 480px) {
+  .row3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
